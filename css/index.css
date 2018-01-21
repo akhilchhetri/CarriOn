@@ -1,0 +1,254 @@
+*{
+	margin:0px;
+	padding: 0px;
+	font-size: auto;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+body{
+  background-color:white;
+}
+div.containers{
+	height: 11%;
+	position: absolute;
+	left:3.4%;
+	width: auto;
+	top:3%;
+}
+ #container{
+    height: 17.9cm; 
+ 	width: 100%;
+    /* background-image: url("pic.jpg");
+ 	background-repeat: no-repeat;
+ 	background-size:cover;
+ 	margin-top: -1px;
+ 	background-attachment: fixed; */
+ }
+ h2#header1{
+ 	font-size:150%;
+ 	font-weight:lighter;
+ 	font-family: 'lato',sans-serif;
+ 	text-align: center;
+ 	color:white;
+}
+#stick{
+	height: 100px;
+}
+#navbar{
+	height:100px;
+	margin: 0%;
+	padding: 0%;
+}
+#nav_menu{
+	font-family: Courier New, Courier, monospace;
+	font-size: 100%;
+	margin-left: 30%;
+	margin-top: 3.2%;
+}
+a.link{
+	text-decoration: none;
+	padding-left: 4%;
+	font-size: 120%;
+	font-weight: 600;
+	color: rgb(9, 81, 109);
+}
+.top-placeholder{
+	margin:0px auto;
+	padding: 0%;
+	width: 100%;
+}
+
+.fixed{
+  	position: fixed;
+  	top:0px;
+	width: 102.2%;    
+}
+a{
+	text-decoration: none;
+	font-family: 'lato',sans-serif;
+}
+
+#below_img_container{
+	left:15%;
+	right:15%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+div#card1{
+	height:auto;
+	width:100% auto;
+}
+
+p#dis{
+	font-size: 18px;
+	font-weight:200;
+	color:black;
+	font-family: 'lato',sans-serif;
+}
+
+
+
+
+
+
+#social1 #social_one{
+	background-color: transparent;
+	height:50px;
+	width:50px;
+	position: fixed;
+	top:400px;
+	left:0px;
+}
+#social1 .w3-hover{
+	background-color: #7F7E95;
+}
+
+#social1 #social_two{
+	background-color: transparent;
+	height:50px;
+	width:50px;
+	position: fixed;
+	top:251px;
+	left:0px;
+}
+
+#social1 #social_three{
+	background-color: transparent;
+	height:50px;
+	width:50px;
+	padding-top: 3px;
+	position: fixed;
+	top:302px;
+	left:0px;
+}
+#social1 #social_four{
+	background-color: transparent;
+	height:50px;
+	width:50px;
+	position: fixed;
+	top:353px;
+	left:0px;
+}
+
+
+img#fb{
+	margin:0px;
+}
+#contact_modal{
+	height:80px;
+}
+
+div#logo_container{
+	position: relative;
+	left:3.3%; 
+	width:auto;
+	margin-top: 1%;
+	margin-left: 2.3%;
+}
+span#first_two{
+	font-size: 150%;
+}
+span#second_two{
+  font-size: 120%;
+  color:white;
+  font-weight: 300;
+  font-family: 'lato',sans-serif;
+}
+.quote{
+	text-align: center;
+	color:rgb(9, 81, 109);
+	position: absolute;
+	font-size:120%;
+	top: 42%;
+	font-family: 'lato',sans-serif; 
+	font-weight:normal;
+	background-color: transparent;
+}
+/*--style for division about us section ---*/
+.card01{
+	height:  20cm;
+	width: 100%;
+}
+.card_title{
+	height: 10%;
+	width: 100%; 
+	
+}
+.below_card01{
+	height: 90%;
+	background-color: aqua;
+	background-image: url("assests/img/02.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-color: #7F7E95;
+}
+p.nav-elements{
+	text-align: center;
+	color: rgb(9, 81, 109);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 200%;
+	padding-top: 1%;
+}
+.column-about{
+	margin-top:11%;
+	height:10cm;
+	text-align: center;
+	border-right:1px solid white;
+}
+.image-container{
+	/* background-color: red; */
+	height: 22%;
+	width: 20%;
+	border: 1px solid white;
+	margin-left: 40%;
+	border-radius: 100%;
+}
+.title-about{
+	margin-top:5%;
+	color: white;
+	font-size: 120%;
+}
+ul{
+	list-style: none;
+	color: rgb(135, 248, 248);
+}
+ul li{
+	padding: 3%;
+}
+input.form-control{
+	border-radius: 0%;
+}
+textarea.form-control{
+	border-radius: 0%;
+}
+#input1{
+	height:50px;
+	border-bottom: 1px solid black;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+#footer_section{
+	height: 250px;
+	width: 100%;
+	position: relative;
+}
+#footer_content{
+}
+text.footer{
+	font-family: 'lato',sans-serif;
+	font-size: 80%;
+	color:white;
+	font-weight:400;
+}
+
+#footer_section{
+	background-color: rgb(9, 81, 109);
+}
+#footer_section_one{
+	height: 85%;
+	width: 100%;
+	}

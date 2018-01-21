@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://nodeaddons.com/getting-your-c-to-the-web-with-node-js/ -->
+<html class="gr__nodeaddons_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Getting your C++ to the Web with Node.js">
+<meta name="author" content="Scott Frees">
+<meta name="keywords" content="blog, self-hosted, self-hosted blogging, programmer blog, programmer blogging sites, programmer blog platform, web developer blogs, web developer blogging platform, blogging for programmers, blogging for web developers, tech blogging, Node.js blogging, javascript blogging, C++ blogging, Node.js addons, Native C++ extension, C and JavaScript, C++ and JavaScript">
+<meta property="og:url" content="https://nodeaddons.com/getting-your-c-to-the-web-with-node-js/">
+<meta property="og:title" content="Getting your C++ to the Web with Node.js">
+<meta property="og:description" content="Getting your C++ to the Web with Node.js">
+<script async="" data-rocketsrc="https://www.google-analytics.com/analytics.js" data-rocketoptimized="true"></script><script type="text/javascript">
+//<![CDATA[
+window.__cfRocketOptions = {byc:0,p:0,petok:"65da2dc3373a9d07739597665b9b2a10db7e7941-1516103331-1800"};
+//]]>
+</script>
+<script type="text/javascript" src="./Getting your C++ to the Web with Node.js_files/rocket.min.js.download"></script>
+<link rel="stylesheet" type="text/css" href="./Getting your C++ to the Web with Node.js_files/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="./Getting your C++ to the Web with Node.js_files/zenburn.css" media="screen">
+<link rel="stylesheet" type="text/css" href="./Getting your C++ to the Web with Node.js_files/print.css" media="print">
+<link rel="apple-touch-icon" sizes="180x180" href="https://nodeaddons.com/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://nodeaddons.com/images/icons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://nodeaddons.com/images/icons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://nodeaddons.com/images/icons/manifest.json">
+<link rel="mask-icon" href="https://nodeaddons.com/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<link href="https://nodeaddons.com/feed.xml" rel="alternate" title="ATOM" type="application/atom+xml">
+<link href="https://nodeaddons.com/feed.rss" rel="alternate" title="RSS" type="application/rss+xml">
+<title> Getting your C++ to the Web with Node.js </title>
+<script type="text/rocketscript" data-rocketoptimized="true">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90679865-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript" async="" data-rocketsrc="//scottfrees.disqus.com/embed.js" data-rocketoptimized="true"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.b6e30194f7733461731644bd3f145d25.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.8edffe1405dcc2d5eb5ee9d96a2866d1.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.f051b96c775327725df1ec0a5e6524e6.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"></head>
+<body data-gr-c-s-loaded="true">
+<header>
+<div class="inner">
+<a href="https://nodeaddons.com/">
+<h1> Node.js Addons </h1>
+<h2>Learning C++ addons for Node.js</h2>
+</a>
+<nav>
+<a id="home_nav" class="ghost-button-transition" href="https://nodeaddons.com/">Quickstart</a>
+<a id="blog_nav" class="ghost-button-transition active" href="https://nodeaddons.com/blog/">Blog</a>
+<a id="book_nav" class="ghost-button-transition" href="https://nodeaddons.com/book/">Book</a>
+
+<a class="ghost-button-transition" href="https://github.com/freezer333/nodecpp-demo">Code</a>
+<script type="text/rocketscript" data-rocketoptimized="true">
+            var loc = window.location.pathname;
+            var nav_id = "home_nav";
+            if ( "true" ){
+              nav_id = "blog_nav";
+            }
+            else if (loc.indexOf("/book") >= 0) {
+              nav_id = "book_nav";
+            }
+            else if (loc.indexOf("/course") >= 0) {
+              nav_id = "course_nav";
+            }
+            var nav = document.getElementById(nav_id);
+            nav.className += nav.className ? ' active' : 'active';
+          </script>
+</nav>
+</div>
+</header>
+<div id="content-wrapper">
+<div class="inner clearfix">
+<section id="main-content">
+<h1>Getting your C++ to the Web with Node.js</h1>
+<span class="subtitle"></span>
+<p class="meta">03 Dec 2015</p>
+<p>So, you’ve got some old C or C++ code, playing an important role in your business - but you desperately want to get that functionality on the web - maybe just internally to streamline your workflow, or maybe publically in order to fulfill some other goal. The problem, of course, is that C++ isn’t exactly easy to put onto the web - so what are your options?
+
+This post is kicking off a series dedicated to showing you how to take your legacy (or new) C/C++ code to the web by integrating it with <a href="https://nodejs.org/">Node.js</a>. In a previous series I detailed one option - <a href="https://nodeaddons.com/book/">Node.js Addons</a> - but in this series I’m covering a few more, along with giving you some guidance on which method might be best in your situation.</p>
+<h2 id="cant-i-just-write-a-c-web-site">Can’t I just write a C++ web site?</h2>
+<p>Well… yes - you could! People have been writing parts of web applications in C++ for a very long time - using CGI. If you want to take a look, check out the notes at the end of the post for some starting points. CGI isn’t the most popular thing on the web these days though, it lacks a lot of productivity enhancements that makes web development so great today. More importantly, it introduces some significant performance and scalability issues. On the other hand, C++ has come a long way over the past few years in terms of expressiveness, and the C++14 standard has enabled a some really cool projects focused on writing modern MVC-styled web apps in pure C++. If that’s your thing, check out <a href="http://siliconframework.org/">Silicon</a>.</p>
+<p>The majority of web developers aren’t C++ programmers, and frankly, unless ultra high performance from your web tier is critical, you are probably better off using languages providing a higher level of abstraction. The common players on the web being Ruby, Go, Node.js, Python, PHP along with many more…</p>
+<h2 id="why-nodejs">Why Node.js?</h2>
+<p>The first answer is… I like it. Seriously though, Node.js has a number of advantages. For one, it <strong>integrates</strong> really nicely with C++ in several different ways - which this post will outline. In general, Node.js also has a lot of benefits that dovetail with why you’d be using C++ in the first place - it’s highly portable, it promotes performance at scale, and has a thriving <a href="https://www.npmjs.com/">ecosystem</a>.</p>
+<h2 id="why-not-just-rewrite-the-c">Why not just rewrite the C++?</h2>
+<p>Ah… every developer’s first instinct - “Let’s rewrite this old code written in language X because language Y is so much cooler | better | faster | easier!”. First off - if you have some legacy C++ code that is simple, small, and doesn’t really need to be high performance - this might very well be the best answer. However, if you are in that category, you probably aren’t reading this - you’re likely almost done rewriting your C++ code.</p>
+<p>There are a few practical reasons not to rewrite code. <strong>First</strong>, you might not have the code! Believe it or not, if you are working for a company that uses legacy tools to support their business, source code for these tools are often lost to time (I’ve seen this a bunch of times when working with engineering firms). A derivative of this is when your legacy code uses third-parth dependencies, which cannot be rewritten or modified.</p>
+<p><strong>Second</strong>, C/C++ can be complex - and if it’s old, it might be really hard to decipher. Are you a web developer that is also a C++ guru? Are you <em>positive</em> you can completely recreate the precise inputs/outputes of this program? If it’s a critical line of business tool, you are putting a <strong>ton</strong> of risk on your plate.</p>
+<p>The <strong>third reason</strong> not to rewrite your C++ is because it might really want to be in C++! While Node.js has decent performance, it’s simply not C/C++. If your application has extreme performance criteria, you aren’t going to beat C++.</p>
+<h2 id="c-and-nodejs---your-options">C++ and Node.js - your options</h2>
+<p>I’ve come up with three general ways of integrating C++ code with a Node.js application - although there are lots of variations within each category:</p>
+<ol>
+<li><strong><a href="https://nodeaddons.com/automating-a-c-program-from-a-node-js-web-app">Automation</a></strong> - call your C++ as a standalone app in a child process.</li>
+<li><strong><a href="https://nodeaddons.com/calling-native-c-dlls-from-a-node-js-web-app">Shared library</a></strong> - pack your C++ routines in a shared library (dll) and call those routines from Node.js directly.</li>
+<li><strong><a href="https://nodeaddons.com/building-an-asynchronous-c-addon-for-node-js-using-nan">Node.js Addon</a></strong> - compile your C++ code as a native Node.js module/addon.</li>
+</ol>
+<p>Each of these options have their advantages and disadvantages, they primarily differ in the degree in which you need to modify your C++, the performance hit you are willing to take when calling C++, and your familiarity / comfort in dealing with Node.js and the V8 API.</p>
+<h3 id="how-to-choose">How to choose</h3>
+<p>The most obvious question to ask first is <strong>do you have access to the C++ source</strong>, <em>or just the binary?</em> Without source code, you need to hope the C++ program is either a command line program or a dll/lib shared library. If you are looking at a program written with only a graphical user interface… well then you are in a world of pain. It’s likely you are going to need to rewrite your application in order to make it work on the web.</p>
+<h3 id="option-1---automation">Option 1 - Automation</h3>
+<p>If your C++ runs as a standalone from a command line, you don’t need the source code to take advantage of Option 1 - the <strong>automation option</strong>. You can run your C++ program unaltered, using Node’s <a href="https://nodejs.org/api/child_process.html">child process</a> API. This option works for bringing just about anything to the web - it really doesn’t make a difference what language your command line program is written in if you are simply running it. If you are reading this hoping to get C code, Fortran code, or some other language onto the web - then this option is worth reading. I’ll discuss this in the next post, which you can read <a href="https://nodeaddons.com/automating-a-c-program-from-a-node-js-web-app">here</a>.</p>
+<p>The automation option is not only for those <em>without</em> the underlying C++ code. If you have C++ code that either is currently, or could easily be turned into, a command line program - then this option is reasonable if you can live with the performance, and you don’t really want to get into the hassles of language integration.</p>
+<h3 id="option-2---shared-library--dll">Option 2 - Shared Library / DLL</h3>
+<p>If you are dealing with a C++ dll/lib, or you have the C++ source code and can make modest modifications in order to create a shared library, then the <strong>shared library</strong> approach might work well for you. I’ll detail how you can do this using the <a href="https://github.com/node-ffi/node-ffi">Foreign Function Interface</a> module in the third post of this series. This option gives you more fine-grain control of how you integrate C++ into Node, because calls to C++ routines can be interleaved with Node.js code itself. While this approach brings you closer to full integration, you still have to deal with type conversions and blocking (see <a href="https://github.com/node-ffi/node-ffi/wiki/Node-FFI-Tutorial#async-library-calls">here</a> for asyc with ffi) when calling C++. It’s a great option if you want better integration, without investing a lot of time dealing with V8. This option is the subject of the <a href="https://nodeaddons.com/calling-native-c-dlls-from-a-node-js-web-app">third post</a> in this series.</p>
+<h3 id="option-3---nodejs-addon">Option 3 - Node.js Addon</h3>
+<p>If you have the C++ source code, and you are willing to learn a bit about <strong>Node.js Addons</strong>, then a third option is creating a native Node.js module out of your C++. While this is the more challenging approach, you gain a ton of flexibility and performance. You also have the option to call your C++ asynchronously so you don’t block your web application’s event-loop while your C++ is crunching numbers. The <a href="https://nodeaddons.com/building-an-asynchronous-c-addon-for-node-js-using-nan">fourth post</a> in this series covers this option using the <a href="https://github.com/nodejs/nan">Nan library</a>. I’ve also written about addons in previous posts (see Notes below). While we’re at it, I’ve also published an ebook that covers this in much more detail - <a href="https://nodeaddons.com/book/">check it out</a>!</p>
+<h2 id="a-running-example---prime-numbers">A running example - Prime Numbers</h2>
+<p>Throughout the next three posts in this series I’ll be showing you examples of how to implement each of the options above. I want to use the same basic example in each. Prime numbers are extremely important for lots of stuff (i.e. cryptography), and their generation tends to be really computationally expensive. A quick search online will direct you mostly towards C and C++ implementations - and the really efficient ones are <em>complicated</em>. Looking at their source, you’ll instantly recognize that you probably don’t’ want to rewrite them - unless you are just looking for a challenge - which is fine:).</p>
+<p>One of the more effective algorithms is called <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthenes</a>. There is a really popular C++ suite, <a href="http://primesieve.org/">primseieve</a> - but it’s pretty complicated to build. Instead, I found a simpler implementation that is more suitable for our purposes. You can find the source code for it <a href="http://wwwhomes.uni-bielefeld.de/achim/prime_sieve.html">here</a>, but it’s also in the <a href="https://github.com/freezer333/cppwebify-tutorial">git repository</a> for this blog series.</p>
+<p><img src="./Getting your C++ to the Web with Node.js_files/Sieve_of_Eratosthenes_animation.gif" alt="Sieve of Eratosthenes"></p>
+<p><em>Animation of Sieve of Eratosthenes - https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes</em></p>
+<h2 id="getting-started---a-simple-nodejs-web-app">Getting Started - a simple Node.js Web app</h2>
+<p>Throughout this series I’ll use the <strong>exact</strong> same Node.js web application. It’s pretty bare-bones, there is a single HTML page with some JavaScript (AngularJS) that asks the web server for prime numbers under a user specified value. The web server responds with a JSON object containing the primes - computed using one of the several techniques I’ll implement.</p>
+<p>I assume the reader has some basic understanding of a Node.js web app. I created the app with Express on the backend and AngularJS on the frontend, but I stayed away from any complexity and eye/candy as to not distract from the purpose of these tutorials. It’s also a great setup for an API into your C++ code - just ditch the UI!</p>
+<p>To get started - clone my github repository and check out tag “start”.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt; git clone https://github.com/freezer333/cppwebify-tutorial.git
+&gt; cd cppwebify-tutorial
+&gt; git checkout start
+</code></pre>
+</div>
+<p>You can poke around the web app yourself - but the relevant bits are the front end - found in /web/views and the backend, found in /index.js and /routes.</p>
+<p>Let’s take a quick look at /index.js. The first ten lines or so are just boilerplate express code:</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'body-parser'</span><span class="p">);</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="s1">'public'</span><span class="p">));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'view engine'</span><span class="p">,</span> <span class="s1">'jade'</span><span class="p">);</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span> <span class="na">extended</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
+</code></pre>
+</div>
+<p>The next line line is building an array of “types” - which will eventually hold entries for each example in the post series. For now, we only have one - a Node.js primesieve implementation.</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">types</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">title</span><span class="p">:</span> <span class="s2">"pure_node"</span><span class="p">,</span>
+    <span class="na">description</span><span class="p">:</span> <span class="s2">"Execute a really primitive implementation of prime sieve in Node.js"</span>
+  <span class="p">}];</span>
+</code></pre>
+</div>
+<p>Each of the entries in types will correspond to a route, found in the /routes directory. These are loaded dynamically from index.js and the web server is started by the final hand full of lines.</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">types</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">'/'</span><span class="o">+</span><span class="nx">type</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./routes/'</span> <span class="o">+</span> <span class="nx">type</span><span class="p">.</span><span class="nx">title</span><span class="p">));</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">'index'</span><span class="p">,</span> <span class="p">{</span> <span class="na">routes</span><span class="p">:</span> <span class="nx">types</span><span class="p">});</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Web server listing at http://localhost:%s'</span><span class="p">,</span> <span class="nx">server</span><span class="p">.</span><span class="nx">address</span><span class="p">().</span><span class="nx">port</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+<p>To launch the web server, navigate to the <code class="highlighter-rouge">/web</code> directory in your terminal and type the following:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt; npm install
+... dependencies will be installed
+&gt; node index
+</code></pre>
+</div>
+<p>You need Node 0.12 or greater to be installed.</p>
+<p>Now point your browser to <code class="highlighter-rouge">http://localhost:3000</code>. You’ll get the index page, which lists the implementation options. For now, you’ll just have one option - “pure_node”. Click on it, and you’ll see a page with a single number box. Type <code class="highlighter-rouge">100</code> and submit - and the Node.js implementation of primesieve will run and return all prime numbers under 100.</p>
+<p><img src="./Getting your C++ to the Web with Node.js_files/img001.png" alt="Results for primes under 100"></p>
+<p>The primesieve implementation in Node.js is found in <code class="highlighter-rouge">routes/pure_node.js</code>. By comparison to the C implementation we’ll use throughout the remainder of this series, it’s mind-numbingly simple - but it gets the job done! The code that handles the actual response is the router’s post method:</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">under</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">under</span><span class="p">);</span> <span class="c1">// from the user</span>
+
+    <span class="kd">var</span> <span class="nx">primes</span> <span class="o">=</span> <span class="nx">find_primes</span><span class="p">(</span><span class="nx">under</span><span class="p">);</span>
+
+    <span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">'Content-Type'</span><span class="p">,</span> <span class="s1">'application/json'</span><span class="p">);</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+      <span class="na">results</span><span class="p">:</span> <span class="nx">primes</span>   <span class="c1">// return an array of primes to the browser</span>
+    <span class="p">}));</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+<h2 id="up-next">Up next…</h2>
+<p>This post is kicking off a series where we’ll dive into all three options for integrating C++ into Node.js - <a href="https://nodeaddons.com/automating-a-c-program-from-a-node-js-web-app">(1) automation</a>, (2) shared library, and (3) addons. I’ve outlined why you’d choose each one, and shown you the basic example I’ll be extending throughout the series. In the <a href="https://nodeaddons.com/automating-a-c-program-from-a-node-js-web-app">next post</a>, we’ll take a closer look at automation option.</p>
+<h2 id="notes">Notes</h2>
+<p>If you are looking for additional information about anything I talked about above, here are some links that might help you. Let me know if I’m missing anything!</p>
+<h3 id="staying-with-c">Staying with C++</h3>
+<ul>
+<li><a href="https://www.tutorialspoint.com/cplusplus/cpp_web_programming.htm">Tutorial on CGI Scripting with C++</a></li>
+<li><a href="http://cgi.sourceforge.net/">Faster CGI Scripting</a></li>
+<li><a href="http://siliconframework.org/">Silicon web framework</a></li>
+</ul>
+<h3 id="why-not-rewrite-legacy-code">Why not rewrite legacy code?</h3>
+<ul>
+<li><a href="http://www.se-radio.net/2015/11/se-radio-episode-242-dave-thomas-on-innovating-legacy-systems/">Dave Thomas - Software Engineering Podcast</a></li>
+<li><a href="http://www.joelonsoftware.com/articles/fog0000000069.html">Joel Spolski - Things You Should Never Do, Part I</a></li>
+</ul>
+<h3 id="previous-posts-on-nodejs-addons">Previous Posts on Node.js Addons</h3>
+<ul>
+<li><a href="https://nodeaddons.com/c-processing-from-node-js">C++ processing from Node.js - An Introduction</a></li>
+<li><a href="https://nodeaddons.com/c-processing-from-node-js-part-2">C++ processing from Node.js - Returning objects to JavaScript from C++</a></li>
+<li><a href="https://nodeaddons.com/c-processing-from-node-js-part-3-arrays">C++ processing from Node.js - Passing Arrays of Objects</a></li>
+<li><a href="https://nodeaddons.com/c-processing-from-node-js-part-4-asynchronous-addons">C++ processing from Node.js - Asynchronous addons</a></li>
+<li><a href="https://nodeaddons.com/book/">C++ and Node.js Integration - ebook</a></li>
+</ul>
+<div class="align_center disqus">
+<div id="disqus_thread" style="width:94%; border:1px solid #eee; padding:20px;"><iframe id="dsq-app8072" name="dsq-app8072" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Getting your C++ to the Web with Node.js_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 785px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+</div>
+<script type="text/rocketscript" data-rocketoptimized="true">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = "scottfrees"; // required: replace example with your forum shortname
+    var disqus_identifier = "silvrback-scottfrees-20215";
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+
+</section>
+<aside id="sidebar">
+<div class="book-sidebar">
+<p>
+<a href="https://nodeaddons.com/book/">
+</a></p><p><a href="https://nodeaddons.com/book/"><span class="tagline">Save time!</span><br>
+<span class="bline" style="color:#333333">Get <u>the</u> handbook<br> for C++ addons. </span>
+</a></p><a href="https://nodeaddons.com/book/">
+<img src="./Getting your C++ to the Web with Node.js_files/book-thumbnail-200.png">
+</a>
+</div>
+<div class="about-sidebar">
+<hr>
+<h1>About me</h1>
+<img id="about-image" "="" src="./Getting your C++ to the Web with Node.js_files/sp.jpg" width="250">
+<p>Hi!&nbsp;&nbsp;I'm Scott Frees. Besides running this site, I'm also an <a href="https://nodeaddons.com/book/">author</a>, <a href="https://scottfrees.com/">consultant / freelance developer</a>, and a <a href="https://pages.ramapo.edu/~sfrees">college professor</a>.</p>
+</div>
+<div class="node-sidebar">
+<hr>
+<h1>Learning Node?</h1>
+<p>Check out some of these great books on learning everything you need to know about Node.js!</p>
+<ul class="book-recs">
+<li><a target="_blank" href="https://www.amazon.com/gp/product/1617290572/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1617290572&amp;linkCode=as2&amp;tag=nodeaddons333-20&amp;linkId=f8d4999b7141c446221a48819d22aeb4">Node.js in Action</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=nodeaddons333-20&amp;l=am2&amp;o=1&amp;a=1617290572" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"></li>
+<li><a target="_blank" href="https://www.amazon.com/gp/product/1937785734/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1937785734&amp;linkCode=as2&amp;tag=nodeaddons333-20&amp;linkId=7abd2186b90487af12e01887b6666c26">Node.js the Right Way: Practical, Server-Side JavaScript That Scales</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=nodeaddons333-20&amp;l=am2&amp;o=1&amp;a=1937785734" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"></li>
+<li><a target="_blank" href="https://www.amazon.com/gp/product/1491949309/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1491949309&amp;linkCode=as2&amp;tag=nodeaddons333-20&amp;linkId=29ad4ada88d7e9d352ce0be672fe55c6">Web Development with Node and Express: Leveraging the JavaScript Stack</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=nodeaddons333-20&amp;l=am2&amp;o=1&amp;a=1491949309" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"></li>
+<li><a target="_blank" href="https://www.amazon.com/gp/product/1617292842/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1617292842&amp;linkCode=as2&amp;tag=nodeaddons333-20&amp;linkId=b3612bc0ada1298a64588fb2f687d0f0">Cross-Platform Desktop Applications: With Node, Electron, and NW.js</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=nodeaddons333-20&amp;l=am2&amp;o=1&amp;a=1617292842" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"></li>
+</ul>
+</div>
+<div class="cpp-sidebar">
+<hr>
+<h1>Learning C++?</h1>
+<p>If you are JS programmer trying to getting your head around C++, start here!</p>
+<ul class="book-recs">
+<li><a target="_blank" href="https://www.amazon.com/gp/product/0134314301/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0134314301&amp;linkCode=as2&amp;tag=nodeaddons333-20&amp;linkId=21fef0df0c6cdea8cb791ee5866871f0">C++ Without Fear: A Beginner's Guide That Makes You Feel Smart (3rd Edition)</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=nodeaddons333-20&amp;l=am2&amp;o=1&amp;a=0134314301" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"></li>
+<li><a target="_blank" href="https://www.amazon.com/gp/product/0988927802/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0988927802&amp;linkCode=as2&amp;tag=nodeaddons333-20&amp;linkId=8e5b68214c68f872019654256e2c1b92">Jumping into C++</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=nodeaddons333-20&amp;l=am2&amp;o=1&amp;a=0988927802" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"></li>
+<li><a target="_blank" href="https://www.amazon.com/gp/product/1491903996/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1491903996&amp;linkCode=as2&amp;tag=nodeaddons333-20&amp;linkId=4baab569eb0acd5e47d409e90f68f4d7">Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=nodeaddons333-20&amp;l=am2&amp;o=1&amp;a=1491903996" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"></li>
+<li><a target="_blank" href="https://www.amazon.com/gp/product/0321563840/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321563840&amp;linkCode=as2&amp;tag=nodeaddons333-20&amp;linkId=051d040bcf60e3d9cc8aee455846d2e4">The C++ Programming Language, 4th Edition</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=nodeaddons333-20&amp;l=am2&amp;o=1&amp;a=0321563840" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"></li>
+</ul>
+</div>
+</aside>
+</div>
+</div>
+<div class="page page_odd">
+<div class="page_content">
+<h1 class="section_h1">Looking for more?</h1>
+<p>Sign up to for Node Addons newsletter so you find out when new articles are published right away. With your signup, you'll get a <span class="text_highlight">free copy of Chapter 2 - Understanding V8 Programming</span> from the <a href="https://nodeaddons.com/book/">Node and C++ Integration e-book</a></p>
+
+<div id="mc_embed_signup">
+<form class="form-blue" action="https://scottfrees.us12.list-manage.com/subscribe/post?u=bb2ca971309da75fa431c4c5b&amp;id=e07df29e55" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
+<div id="mc_embed_signup_scroll">
+<div class="mc-field-group form-group">
+<label class="form-label" for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+<input class="form-input" type="email" value="" name="EMAIL" id="mce-EMAIL">
+</div>
+<div class="mc-field-group form-group">
+<label class="form-label" for="mce-FNAME">First Name </label>
+<input class="form-input" type="text" value="" name="FNAME" id="mce-FNAME">
+</div>
+<div class="mc-field-group form-group">
+<label class="form-label" for="mce-LNAME">Last Name </label>
+<input class="form-input" type="text" value="" name="LNAME" id="mce-LNAME">
+</div>
+<div id="mce-responses" class="clear">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div> 
+<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bb2ca971309da75fa431c4c5b_e07df29e55" tabindex="-1" value=""></div>
+<div class="form-group clear">
+<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="myButton">
+<span class="text-muted indicates-required"><span class="asterisk">*</span> indicates required</span>
+</div>
+</div>
+</form>
+</div>
+
+</div>
+</div>
+
+
+
+<iframe style="display: none;" src="./Getting your C++ to the Web with Node.js_files/saved_resource(1).html"></iframe></body></html>

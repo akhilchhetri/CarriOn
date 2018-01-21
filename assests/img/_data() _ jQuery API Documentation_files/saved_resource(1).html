@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://api.jquery.com/data/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>data demo</title>
+  <style>
+  div {
+    margin: 5px;
+    background: yellow;
+  }
+  button {
+    margin: 5px;
+    font-size: 14px;
+  }
+  p {
+    margin: 5px;
+    color: blue;
+  }
+  span {
+    color: red;
+  }
+  </style>
+  <script src="./jquery-1.10.2.js.download"></script>
+<style>html, body { border:0; margin:0; padding:0; }body { font-family: 'Helvetica', 'Arial',  'Verdana', 'sans-serif'; }</style></head>
+<body style="">
+ 
+<div>A div</div>
+<button>Get "blah" from the div</button>
+<button>Set "blah" to "hello"</button>
+<button>Set "blah" to 86</button>
+<button>Remove "blah" from the div</button>
+<p>The "blah" value of this div is <span>?</span></p>
+ 
+<script>window.onload = function() {
+$( "button" ).click(function() {
+  var value;
+ 
+  switch ( $( "button" ).index( this ) ) {
+    case 0 :
+      value = $( "div" ).data( "blah" );
+      break;
+    case 1 :
+      $( "div" ).data( "blah", "hello" );
+      value = "Stored!";
+      break;
+    case 2 :
+      $( "div" ).data( "blah", 86 );
+      value = "Stored!";
+      break;
+    case 3 :
+      $( "div" ).removeData( "blah" );
+      value = "Removed!";
+      break;
+  }
+ 
+  $( "span" ).text( "" + value );
+});
+};</script>
+ 
+
+</body></html>
