@@ -7,10 +7,10 @@
   <meta name="author" content="CarriOn Nepal|| Best logistics business">
   <meta name="description" content="CarriOn is the best delivery and logistice services for the online shopings, e commerce, and peer to peer delivery of goods">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!----
+  <!--
   <link rel="stylesheet" href="bootstrap.min.css">
   -->
-  <link rel="stylesheet" type="text/css" href="css/w3.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/w3.css"> -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <script src="js/jquery-mobile.js"></script>
   <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
@@ -21,57 +21,88 @@
   </style>
 </head>
 <body>
-<div id="container">
-    <div id="top-logo-container" class="w3-left containers">
-        <a id="title-in-top" href="#home" class="header">
-            <div id="logo-section" class="w3-left">
-                <h3>CarriOn</h3>
+<div id="main">
+    <div id="container">
+        <div class="row" style="width:100%">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+                <a id="title-in-top" href="#home" class="header link">
+                    <div id="logo-section">
+                        <h1>CarriOn</h1>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>  
-    
-    <div class="quote" style="height:6%;width:100%;float:center">"DO A SMART BUSINESS WITH CARRION,<br> WE CARRY YOUR GOODS TO YOUR VALUABLE CUSTOMER IN TIME"</div>
-  </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-top:3.1%;">
+                <a data-toggle="modal" id="title-in-top" class="header link">
+                    <button class="btn" style="margin-left:20%" onclick="show()">Become Rider</button>
+                </a>
+                <div id="hero" style="display:none">
+                   
+                </div>
+                <a id="title-in-top" href="#partnermodal" class="header link">
+                        <button class="btn"  style="margin-left:6%">Make CarriOn as Delivery partner</button>
+                </a>
+            </div>
+        </div>
+        <!-- Modal for the register -->
+        
+        <!-- End of the modal reister -->
+        <div class="row" style="width:100%">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-top:40%;">
+                    <a id="title-in-top" href="#partnermodal" class="header link">
+                        <button class="btn btn-login">Rider Login</button>
+                    </a>
+                </div>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-top:4%;">
+                        <a id="title-in-top" href="#partnermodal" class="header link">
+                            <button class="btn btn-login">User login</button>
+                        </a>
+                </div>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                <img src="assests/logo/delivery.png" alt="Carrion" height="500px">
+            </div>
+        </div>
+
+        <div class="quote">"DO A SMART BUSINESS WITH CARRION,
+            <br> WE CARRY YOUR GOODS TO YOUR VALUABLE CUSTOMER IN TIME"
+        </div>
+    </div>
  <!--end  of the division container_wropper-->
 
 <!-- div that should be stick on the top of the page -->
-    <div class="row w3-white" id="stick">
+    <div class="row" id="stick" style="width:101.1%">
             <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <div class="w3-left" id="logo_container">
-                    <a id="headerinnav" href="/"> 
-                    <div class="w3-left" id="span_logo">
-                        <h3>CarriOn</h3>
+                <div id="logo_container">
+                    <a class="link" id="navheader" href="/"> 
+                    <div style="margin-top:-11%" class="text-center">
+                        <h1>CarriOn</h1>
                     </div> 
                     </a>
                 </div>
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="text-align:right">
                     <div class="list-inline" id="nav_menu">
                         <ul>
-                            <l1><a id="home" class="w3-hover w3-hover-text-red link" href="#">HOME</a></l1>
-                            <l1><a id="about" class="w3-hover w3-hover-text-red link" href="#about-us">ABOUT</a></l1>   
-                            <l1><a id="skills" class="w3-hover w3-hover-text-red link" href="#why-us">WHY US</a></l1>
-                            <l1><a id="services" class="w3-hover w3-hover-text-red link" href="#">QUICK ORDER</a></l1>
-                            <l1><a id="blog" class="w3-hover w3-hover-text-red link" href="#" target="_blank">OUR SERVICES</a></l1>
-                            <l1><a id="blog" class="w3-hover w3-hover-text-red link" href="#">CONTACT</a></l1>
+                            <l1><a id="home" class="w3-hover-text-white link" href="">HOME</a></l1>
+                            <l1><a id="about" class="w3-hover-text-white link" href="#about-us">ABOUT</a></l1>   
+                            <l1><a id="skills" class="w3-hover-text-white link" href="#why-us">WHY US</a></l1>
+                            <l1><a id="services" class="w3-hover-text-white link" href="#">QUICK ORDER</a></l1>
+                            <l1><a id="blog" class="w3-hover-text-white link" href="#" target="_blank">ACCOUNT</a></l1>
+                            <l1><a id="blog" class="w3-hover-text-white link" href="#">CONTACT</a></l1>
                         </ul>
                     </div>
             </div>
     </div>
 <!-- Division for pictures to be shown with works -->
     <div  class="card01">
-        <div class="card_title">
-            <p class="nav-elements">
-                <strong>ABOUT</strong>
-            </p>
-        </div>
         <div class="below_card01">
-            <div class="row">
+            <div class="row" style="width:99%">
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 column-about">
                     <div class="image-container">
                         
                     </div>
-                    <h4 class="title-about">Best Delivery</h4><br>
+                    <h4 class="title-about">Best Delivery</h4><br><hr>
                     <ul>
                         <li>We deliver the good u choosed to your doorstep</li>
                         <li>Logistics, with trust and flexibility</li>
@@ -83,7 +114,7 @@
                     <div class="image-container">
                         
                     </div>
-                    <h4 class="title-about">New Approach Service</h4><br>
+                    <h4 class="title-about">New Approach Service</h4><br><hr>
                     <ul>
                         <li>We provides delivery and logistics to individuals</li>
                         <li>Full supply chain services for B2B</li>
@@ -95,69 +126,52 @@
                     <div class="image-container">
                         
                     </div>
-                    <h4 class="title-about w3-text-white">Just in time</h4><br>
+                    <h4 class="title-about">Just in time</h4><br><hr>
                     <ul>
-                         <li>We deliver your goods in your doorstep in your desired time</li>
-                         <li>We have Express service upto 2 hours depending upon the place</li>
+                         <li>Deliver goods doorstep in desired time</li>
+                         <li>Express service upto 2 hours on special place</li>
                          <li>Logistics service for each e-commerce</li>
-                         <li>Logistics service for each e-commerce</li>
+                         <li>Logistics service for Each individual</li>
                     </ul>
                 </div>
-            </div>   
-        </div>       
+            </div>
+        </div> <hr>   
     </div>
 <!-- End of the divison to be shown with works-->
 <!-- division for about section-->
-    <div  class="card01">
+    <div  class="card02">
         <div class="card_title">
             <p class="nav-elements">
-                <strong>WHY US</strong>
+                <strong>WHY US??</strong>
             </p>
         </div>
-        <div class="below_card01">
-            <div class="row">
+        <div class="below_card02">
+            <div class="row" style="width:99%">
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 column-about">
-                        <div class="image-container">
-                            
+                        <div class="image-container1">
+                            <h4 class="title-about">Best Delivery</h4><br>
                         </div>
-                        <h4 class="title-about">Best Delivery</h4><br>
-                        <ul>
-                            <li>We deliver the good u choosed to your doorstep</li>
-                            <li>Logistics, with trust and flexibility</li>
-                            <li>Affordable cost format for everyone</li>
-                            <li>Do u value about time? We value your time more</li>
-                        </ul>
+                        
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 column-about">
-                        <div class="image-container">
-                            
+                        <div class="image-container1">
+                            <h4 class="title-about">New Approach Service</h4><br>
                         </div>
-                        <h4 class="title-about">New Approach Service</h4><br>
-                        <ul>
-                            <li>We provides delivery and logistics to individuals</li>
-                            <li>Full supply chain services for B2B</li>
-                            <li>Logistics service for each e-commerce</li>
-                            <li>Free riders with van, cars, taxi or bikes can deliver goods through us</li>
-                        </ul>
+                       
                     </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 column-about">
-                        <div class="image-container">
-                            
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 column-about text-center">
+                        <div class="image-container1">
+                        
+                            <h4 class="title-about text-center">Affordable Price</h4><br>
                         </div>
-                        <h4 class="title-about">Just in time</h4><br>
-                        <ul>
-                                <li>We deliver your goods in your doorstep in your desired time</li>
-                                <li>We have Express service upto 2 hours depending upon the place</li>
-                                <li>Logistics service for each e-commerce</li>
-                                <li>Logistics service for each e-commerce</li>
-                        </ul>
+                       
                     </div>
                 </div> 
         </div>       
     </div>
 <!-- end of about section-->
 <!-- division for why-us section-->
-    <div  class="card01">
+    <!-- <div  class="card01">
         <div class="card_title">
             <p class="nav-elements">
                 <strong>QUICK ORDER</strong>
@@ -197,61 +211,37 @@
                     <button type="submit" class="btn" style="border-radius:0%;margin-top:3%">Order Now</button>
             </form>  
         </div>       
-    </div>
-    <div  class="card01">
+    </div> -->
+    <div  class="card03">
         <div class="card_title">
             <p class="nav-elements">
-                <strong>OUR SERVICES</strong>
+                <h1 class="text-header">WANT TO KNOW ABOUT MORE.. ??</h1>
             </p>
         </div>
-        <div class="below_card01">
-                <div class="row">
+        <div class="below_card03">
+                <div class="row" style="width:100%">
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 column-about">
-                            <div class="image-container">
-                                
-                            </div>
-                            <h4 class="title-about">Best Delivery</h4><br>
-                            <ul>
-                                <li>We deliver the good u choosed to your doorstep</li>
-                                <li>Logistics, with trust and flexibility</li>
-                                <li>Affordable cost format for everyone</li>
-                                <li>Do u value about time? We value your time more</li>
-                            </ul>
+                            <h1 class="text-header" style="font-size:500%">150+</h1>
+                            <h4 class="title-guff">E-commerce and online business Connected</h4><br>
                         </div>
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 column-about">
-                            <div class="image-container">
-                                
-                            </div>
-                            <h4 class="title-about">New Approach Service</h4><br>
-                            <ul>
-                                <li>We provides delivery and logistics to individuals</li>
-                                <li>Full supply chain services for B2B</li>
-                                <li>Logistics service for each e-commerce</li>
-                                <li>Free riders with van, cars, taxi or bikes can deliver goods through us</li>
-                            </ul>
+                            <h1 class="text-header" style="font-size:500%">500+</h1>
+                            <h4 class="title-guff">Delivery Partner connected</h4><br>
                         </div>
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 column-about">
-                            <div class="image-container">
-                                
-                            </div>
-                            <h4 class="title-about">Just in time</h4><br>
-                            <ul>
-                                 <li>We deliver your goods in your doorstep in your desired time</li>
-                                 <li>We have Express service upto 2 hours depending upon the place</li>
-                                 <li>Logistics service for each e-commerce</li>
-                                 <li>Logistics service for each e-commerce</li>
-                            </ul>
+                            <h1 class="text-header" style="font-size:500%">2000+</h1>
+                            <h4 class="title-guff">Delivery till now</h4><br>
                         </div>
                     </div>             
         </div>       
     </div>
-    <div  class="card01">
+    <div  class="card04">
             <div class="card_title">
                 <p class="nav-elements">
-                    <strong>CONTACT</strong>
+                    <strong>CONTACT US</strong><br><small style="font-size:60%">If u have urgent message then, feel free to contact filling below form</small>
                 </p>
             </div>
-            <div class="below_card01" style="padding:10% 15%">
+            <div class="below_card04">
                 <form action="/contact-us" method="post">
                     <div class="form-group">
                             <label>Your full name</label>
@@ -266,17 +256,18 @@
                             <textarea class="form-control" rows="5" placeholder="Your Message here.." name='contact_message'></textarea>
                         </div>
                         
-                        <button type="submit" class="btn" style="border-radius:0%;margin-top:3%">Send Message</button>
+                        <button type="submit" class="btn submit-contact" style="margin-top:3%">Send Message</button>
                 </form>
             </div>       
     </div>
+</div>
 <!-- end of the division for why-us section-->
-    <div id="footer_section" class="w3-center">
+    <div id="footer_section">
         <div id="footer_section_one">
-        
+            
         </div>
         <div id="footer_content">
-            <text class="footer"> &#169 2018 CarriOn || All rights reserved</text>
+            <text> &#169 2018 <a href="/" style="text-decoration: none;color:rgb(4, 29, 39)">CarriOn</a> || All rights reserved</text>
         </div>     
     </div>
 </body>
