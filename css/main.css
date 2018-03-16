@@ -1,0 +1,564 @@
+*{
+	margin:0px;
+	padding: 0px;
+	font-size: auto;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+body{
+  background-color:white;
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+  /* margin-top: 180px; */
+}
+.navbar{
+	box-shadow: 0.1px 0.1px 0.1px black;
+}
+.navbar-nav{
+	width:40%;
+	font-weight:600;
+	position: absolute;
+	right:20%;
+	font-family: Courier New, Courier, monospace;
+	font-size: 100%;
+	text-align: right;
+}
+.nav-link{
+	color: rgba(0, 0, 0, 0.76);
+	font-size: 110%;
+	font-weight:200;
+	border-bottom: 1.5px solid rgb(3, 110, 96);
+}
+.nav-link:hover{
+	color: black;
+}
+.row{
+	width: 100%;
+}
+.btn{
+	border: 1.5px solid black;
+	width: 30%;
+	height: 50px;
+	font-size: 100%;
+	background-color: white;
+	font-weight: 600;
+	color: black;
+}
+.btn:hover{
+	opacity:0.8;
+	background-color: black;
+	color: white;
+}
+/* style for the login section */
+.login-contain{
+	margin-top: 25%;
+}
+.btn-login{
+	width: 80%;
+	font-size: 100%;
+}
+ #container{
+	margin: 0%;
+	padding: 0%;
+    height: 21cm;
+ }
+ /* style sheet for the stick div */
+ #stick{
+	 height:75px;
+	 background-color: white;
+	 border-bottom:0.5px solid rgba(126, 123, 123, 0.911);
+	 z-index: 1;
+ }
+
+ /* Stylesheet for the navmenu */
+ /* .navmenu{
+	 position: absolute;
+	 right: 0%;
+	 top: 17%;
+	 width: 70%;
+ } */
+ h2#header1{
+ 	font-size:150%;
+ 	font-weight:lighter;
+ 	font-family: 'lato',sans-serif;
+ 	text-align: center;
+	color:white;
+}
+/* Style for the region containing the register section for the user and partner */
+.reg-contain{
+	padding-left:25%;
+}
+/* Style for the btn which is in the top for the register of user and partner */
+.reg-contain .btn{
+	width:45%;
+}
+
+/* Style for the img-home */
+.img-home{
+	height: 100%;
+	width: 50%;
+	margin-top: 5%;
+	margin-left: 12%;
+}
+
+/* style for division why us */
+#why-us{
+	padding-top: 20px;
+	margin-top:0px;
+	background-color:rgba(0, 0, 0, 0.822);
+	padding-bottom: 50px;
+}
+#pricing{
+	padding-top: 20px;
+	margin-top:0px;
+	background-color:rgba(0, 0, 0, 0.822);
+	padding-bottom: 50px;
+}
+.title-why-desc{
+	color:white;
+}
+/* stylesheet for topic  */
+.topic{
+	border-bottom: 3px solid rgb(3, 110, 96);
+	width: 100px;
+	padding-bottom:1%;
+	margin-left: 45%;
+}
+@media(max-width:765px){
+	.img-home{
+		height: 150%;
+		width: 150%;
+	}
+	.image-container{
+		width: 100px;
+	}
+	.card02{
+		margin-top: 20%;
+	}
+	.topic{
+		margin-left:43%;
+	}
+}
+
+@media(max-width: 670px){
+	#container{
+		width:100%;
+	}
+	.btn{
+		width: 33%;
+	}
+	.btn-login{
+		width: 69%;
+		font-size: 80%;
+	}
+	.reg-contain{
+		padding-left: 0%;
+	}
+	.card02{
+		margin-top: 20%;
+	}
+	.topic{
+		margin-left: 40%;
+	}
+}
+@media(max-width: 575px){
+	.reg-contain .btn{
+		width: 45%;
+		font-size: 80%;
+	}
+	.btn-login{
+		width: 25%;
+		margin-left: -5%;
+		font-size: 80%;
+	}
+	.div-img{
+		position: absolute;
+		margin-top: 3%;
+		height: 80%;
+	}
+	.img-home{
+		height: 80%;
+		width: 30%;
+		margin-left: 43%;
+	}
+	.quote{
+		margin-top: 15%;
+	}
+	.card01{
+		padding-left: 5%;
+		margin-top: 10%;
+	}
+	.topic{
+		margin-left:38%;
+	}
+}
+.btn-msg{
+	margin-left:35%;
+}
+@media(max-width:590px){
+	.btn{
+		width: 45%;
+	}
+	.btn-msg{
+		margin-left: 30%;
+	}
+}
+/* 
+#navbar{
+	height:100px;
+	margin: 0%;
+	padding: 0%;
+}
+#nav_menu{
+	background: #999;
+	width:100%;
+	position: absolute;
+	right: 0%;
+	font-family: Courier New, Courier, monospace;
+	font-size: 100%;
+	text-align: right;
+}	 */
+a.link{
+	font-weight: bolder;
+	text-decoration: none;
+	/* padding-left: 4%; */
+	font-size: 80%;
+	color: rgba(0, 0, 0, 0.822);
+}
+.top-placeholder{
+	margin:0px auto;
+	padding: 0%;
+	width: 100%;
+}
+
+.fixed{
+  	position: fixed;
+  	top:0px;
+	width: 102.2%; 
+	background-color: rgb(255, 102, 0);
+	z-index: 1; 
+}
+/* media for the nav bar */
+.bottom-quote{
+	display: none;
+}
+@media(max-width:1280px){
+	.top-quote{
+		display: none;
+	}
+	.bottom-quote{
+		display: block;
+		margin:20px 20px 20px 20px;
+	}
+}
+@media(max-width:945px){
+	a.link{
+		padding-left: 2%;
+		font-size:70%;
+	}
+}
+
+a{
+	text-decoration: none;
+	font-family: 'lato',sans-serif;
+}
+
+.address{
+	width: 32.9%;
+	display: inline;
+}
+#below_img_container{
+	left:15%;
+	right:15%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+div#card1{
+	height:auto;
+	width:100% auto;
+}
+
+p#dis{
+	font-size: 18px;
+	font-weight:200;
+	color:black;
+	font-family: 'lato',sans-serif;
+}
+
+
+img#fb{
+	margin:0px;
+}
+#contact_modal{
+	height:80px;
+}
+
+div#logo_container{
+	position: relative;
+	left:3.3%; 
+	width:auto;
+	margin-top: 1%;
+	margin-left: 2.3%;
+}
+span#first_two{
+	font-size: 150%;
+}
+span#second_two{
+  font-size: 120%;
+  color:white;
+  font-weight: 300;
+  font-family: 'lato',sans-serif;
+}
+.quote{
+	text-align: center;
+	color:rgb(4, 29, 39);
+	position: absolute;
+	font-size:120%;
+	top: 89%;
+	font-family: 'lato',sans-serif;
+	background-color: transparent;
+	height:6%;
+	width:100%;
+	float:center
+}
+/*--style for division about us section ---*/
+.card01{
+	margin-top: 20px;
+	width: 100%;
+}
+.card_title{
+	height: 10%;
+	width: 100%; 
+}
+
+/* .nav-elements{
+	text-align: center;
+	color: rgb(9, 81, 109);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 200%;
+	padding-top: 1%;
+} */
+.column-about{
+	height: auto;
+	text-align: center;
+	color:black;
+	margin-top: 9%;
+}
+ul{
+	list-style: none;
+	font-size: 120%;
+	color: rgb(4, 29, 39);
+	font-weight: 500;
+}
+ul li{
+	padding: 3%;
+}
+input.form-control{
+	border-radius: 0%;
+}
+textarea.form-control{
+	border-radius: 0%;
+}
+#input1{
+	height:50px;
+	border-bottom: 1px solid black;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+#footer_section{
+	margin-top: 6%;
+	color: rgba(255, 255, 255, 0.753);
+	background-color: rgba(22, 21, 21, 0.877);
+	text-align: center;
+	width: 100%;
+	padding-bottom: 3%;
+}
+.footer-foot{
+	margin-top: 3%;
+	height:230px;
+	font-size: 150%;
+	font-weight: 100;
+}
+.footer-title{
+	border-bottom: 2px solid rgb(4, 29, 39);
+}
+.footer-body{
+	color: white;
+	text-align: left;
+	padding-left: 15%;
+	font-size: 80%;
+	font-weight: 100;
+}
+
+#footer_section_one{
+	font-size: 150%;	
+	width: 100%;
+	}
+a.footer-link{
+	text-decoration: none;
+	color: rgb(156, 156, 156);
+	font-size: 85%;
+	font-weight: 200;
+}
+a.footer-link:hover{
+	color: rgb(245, 243, 243);
+}
+#footer_content{
+	font-size: 130%;
+	padding-top: 3%;
+	font-weight:600;
+}
+.sbmt-btn{
+	background-color:white;
+	opacity:1;font-size:120%;
+	font-weight:600;
+	margin-top:2%;
+	height: 12%;
+}
+.below_card02{
+	margin-top: -3%;
+}
+.card03{
+	color: white;
+}
+.title-guff{
+	color: black;
+	font-weight: 100;
+	font-size: 200%;
+}
+.text-header{
+	margin-top: 8%;
+	text-align: center;
+	font-weight: 100;
+	color: black;
+}
+.card04{
+	padding-top: 5%;
+}
+.below_card04{
+	margin-top: 4%;
+	width: 60%;
+	margin-left: 20%;
+}
+.submit-contact{
+	background-color: white;
+	font-size: 120%;
+	font-weight: 500;
+}
+.submit-contact:hover{
+	opacity: 1;
+}
+/* media query for submit contact button */
+@media(max-width:810px){
+	.submit-contact{
+		width: 50%;
+		font-size: 90%;
+	}
+}
+.form-control-user{
+	border: 1px solid rgb(4, 29, 39);
+}
+.btn-reg-user{
+	border: 2px solid rgb(4, 29, 39);
+	color: rgb(4, 29, 39);
+}
+.btn-reg-user:hover{
+	background-color: rgb(4, 29, 39);
+}
+.btn-log-user{
+	border: 2px solid rgb(4, 29, 39);
+	color: rgb(4, 29, 39);
+}
+.btn-log-user:hover{
+	background-color: rgb(4, 29, 39);
+}
+
+
+
+/* design for the division of welcome and quick order form */
+.welcome-division{
+	margin-top: 75px;
+}
+.quick_order_form{
+	height: 21cm;
+	position: absolute;
+	right: 9%;
+	padding-top: 1.6%;
+}
+h4.quick-delivery{
+	border-bottom: 2px solid rgb(3, 110, 96);
+	padding-bottom:2%;
+}
+
+.drive-ride-section{
+	height:18cm;
+	width: 105%;
+}
+.btn-container{
+	height: 200px;
+	position: absolute;
+	top:100px;
+	left:6%;
+	width: 40%;
+}
+.ride-user-btn{
+	border: none;
+	font-size: 120%;
+	padding-top:5%;
+	padding-bottom:2%;
+	padding-right: 3%;
+	padding-left:3%;
+	margin-left: 5%;
+	/* border-bottom: 2px solid rgb(3, 110, 96); */
+}
+.ride-user-btn:hover{
+	border-bottom: 2px solid rgb(3, 110, 96);
+}
+a.link-1{
+	text-decoration: none;
+	color:rgba(0, 0, 0, 0.781);
+	font-weight:bolder;
+}
+.poster-container{
+	margin-top: 10%;
+	background-image: url(../assests/logo/welcome.jpg);
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-position: top;
+	background-size:800px 500px;
+	background-attachment: scroll;
+	height: auto;
+}
+.quote-container{
+	width: 50%;
+	position: absolute;
+	right: 10%;
+	top: 19%;
+}
+.start-quote{
+	font-size: 30px;
+	font-weight: 100;
+}
+.title-desc{
+	font-size: 20px;
+	font-weight: 400;
+}
+.title-why-desc{
+	font-size: 20px;
+	font-weight:400; 
+}
+.coumn-about-1{
+	padding-top: 20%;
+}
+/* Design for form control */
+.form-control{
+	height: 50px;
+}
+
+/* Stylesheet for the img-icon */
+.img-icon{
+	background-attachment: fixed;
+}
